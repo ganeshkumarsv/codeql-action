@@ -212,6 +212,21 @@ async function getCodeQLBundleDownloadURL(
       );
     }
   }
+  try {
+    const release = await api.getApiClient(apiDetails).request("GET /enterprise/code-scanning/codeql-bundle/find/{tag}", {tag: CODEQL_BUNDLE_VERSION});
+    const assetID = release.data.assets[codeQLBundleName];
+    if (assetID !== undefined) {
+      const downloadURL = apiDetails.url + "/api/v3/enterprise/code-scanning/codeql-bundle/download/" + assetID;
+      logger.info(
+        `Found CodeQL bundle at GitHub AE endpoint with URL ${downloadURL}.`
+      );
+      return downloadURL;
+    }
+  } catch (e) {
+    logger.info(
+      `Attempted to fetch bundle from GitHub AE endpoint but got error ${e}.`
+    );
+  }
   return `https://github.com/${CODEQL_DEFAULT_ACTION_REPOSITORY}/releases/download/${CODEQL_BUNDLE_VERSION}/${codeQLBundleName}`;
 }
 
