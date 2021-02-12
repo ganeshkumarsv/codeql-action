@@ -12,7 +12,7 @@ inputs:
   upload:
     description: Upload the SARIF file
     required: false
-    default: "false"
+    default: "true"
   debug:
     required: false
     default: "true"
