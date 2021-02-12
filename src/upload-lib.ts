@@ -50,7 +50,7 @@ async function uploadPayload(
   mode: util.Mode,
   logger: Logger
 ) {
-  logger.info("Uploading results");
+  logger.info("Debug ::  Uploading results");
 
   // If in test mode we don't want to upload the results
   const testMode = process.env["TEST_MODE"] === "true" || false;
