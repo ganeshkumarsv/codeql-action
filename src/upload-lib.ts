@@ -302,7 +302,7 @@ async function uploadFiles(
     validateSarifFileSchema(file, logger);
   }
 
-  let sarifPayload = combineSarifFiles(sarifFiles);
+  let sarifPayload = combineSarifFiles(sarifFiles, logger);
   sarifPayload = fingerprints.addFingerprints(
     sarifPayload,
     checkoutPath,
