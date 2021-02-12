@@ -12,7 +12,6 @@ inputs:
   upload:
     description: Upload the SARIF file
     required: false
-    default: "true"
   ram:
     description: Override the amount of memory in MB to be used by CodeQL. By default, almost all the memory of the machine is used.
     required: false
