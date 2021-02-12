@@ -68,9 +68,6 @@ async function uploadPayload(
     repo: repositoryNwo.repo,
     data: payload,
   });
-  logger.info("logging the Sarif File");
-  logger.info(`${payload}`);
-  logger.info(payload);
   logger.debug(`response status: ${response.status}`);
   logger.info("Successfully uploaded results");
 }
