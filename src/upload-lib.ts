@@ -17,7 +17,7 @@ import * as util from "./util";
 
 // Takes a list of paths to sarif files and combines them together,
 // returning the contents of the combined sarif file.
-export function combineSarifFiles(sarifFiles: string[]): string {
+export function combineSarifFiles(sarifFiles: string[], logger: Logger): string {
   const combinedSarif = {
     version: null,
     runs: [] as any[],
