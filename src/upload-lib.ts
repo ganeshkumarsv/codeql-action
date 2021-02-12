@@ -308,7 +308,7 @@ async function uploadFiles(
     checkoutPath,
     logger
   );
-
+  logger.info(sarifPayload);
   const zippedSarif = zlib.gzipSync(sarifPayload).toString("base64");
   const checkoutURI = fileUrl(checkoutPath);
 
