@@ -25,6 +25,8 @@ export function combineSarifFiles(sarifFiles: string[]): string {
 
   for (const sarifFile of sarifFiles) {
     const sarifObject = JSON.parse(fs.readFileSync(sarifFile, "utf8"));
+    logger.info("logging sarif");
+    logger.info(`${sarifObject}`)
     // Check SARIF version
     if (combinedSarif.version === null) {
       combinedSarif.version = sarifObject.version;
