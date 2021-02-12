@@ -273,7 +273,7 @@ program
     "--temp-dir <dir>",
     'Directory to use for temporary files. Default is "./codeql-runner".'
   )
-  .option("--debug", "Print more verbose output", false)
+  .option("--debug", "Print more verbose output", true)
   .action(async (cmd: AutobuildArgs) => {
     const logger = getRunnerLogger(cmd.debug);
     try {
